@@ -23,6 +23,8 @@
     "vinyl-source-stream": "^1.1.0"
   },
   "dependencies": {
+    "body-parser": "^1.4.3",
+    "express": "^4.4.5",
     "envify": "~3.4.0",
     "react": "~0.13.1"
   }

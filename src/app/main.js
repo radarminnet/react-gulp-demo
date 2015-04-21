@@ -1,7 +1,7 @@
 var React = require("react");
-var AppContainer = require("./app.jsx");
+var CommentBox = require("./app.jsx");
 
 React.render(
-    <AppContainer/>,
-    document.getElementById("main")
+    <CommentBox url="comments.json" pollInterval={2000}/>,
+    document.getElementById('main')
 );
