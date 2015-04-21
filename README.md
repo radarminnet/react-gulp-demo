@@ -17,7 +17,7 @@ or
 ```
 $ gulp dev
 ```
-...to make gulp scan the `src/` folder for changes to `.html` and `.js files and build the bundle automatically.
+...to make gulp scan the `src/` folder for changes to `.html` and `.js` files and build the bundle automatically.
 
 ### Run the server
 To start the server, type
