@@ -3,18 +3,19 @@
  */
 
 var React = require("react");
-var $ = require('jquery');
-var marked = require('marked');
+var $ = require("jquery");
+var marked = require("marked");
 
 var Comment = React.createClass({
   render: function () {
     var rawMarkup = marked(this.props.children.toString(), {sanitize: true});
     return (
-      <div className="comment">
-        <p className="commentAuthor">
+      <div className="alert alert-info" role="alert">
+        <h4>
           {this.props.author}
-        </p>
-        <span dangerouslySetInnerHTML={{__html: rawMarkup}}/>
+        </h4>
+
+        <p dangerouslySetInnerHTML={{__html: rawMarkup}}/>
       </div>
     );
   }
@@ -63,10 +64,23 @@ var CommentBox = React.createClass({
   },
   render: function () {
     return (
-      <div className="commentBox">
-        <h1>Comments</h1>
-        <CommentList data={this.state.data}/>
-        <CommentForm onCommentSubmit={this.handleCommentSubmit}/>
+      <div>
+        <div className="row">
+          <div className="col-md-12">
+            <h1>Comments</h1>
+          </div>
+        </div>
+
+        <div className="row">
+          <div className="col-md-6">
+            <CommentList data={this.state.data}/>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-md-3">
+            <CommentForm onCommentSubmit={this.handleCommentSubmit}/>
+          </div>
+        </div>
       </div>
     );
   }
@@ -106,10 +120,18 @@ var CommentForm = React.createClass({
   },
   render: function () {
     return (
-      <form className="commentForm" onSubmit={this.handleSubmit}>
-        <input type="text" placeholder="Your name" ref="author"/>
-        <input type="text" placeholder="Say something..." ref="text"/>
-        <input type="submit" value="Post"/>
+      <form onSubmit={this.handleSubmit}>
+        <div>
+          <div className="form-group">
+            <input type="text" className="form-control" placeholder="Your name" ref="author"/>
+          </div>
+        </div>
+        <div className="form-group">
+          <input type="text" className="form-control" placeholder="Say something..." ref="text"/>
+        </div>
+        <div className="form-group">
+          <input type="submit" className="btn btn-default" value="Post"/>
+        </div>
       </form>
     );
   }
