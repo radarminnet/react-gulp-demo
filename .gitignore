@@ -3,3 +3,4 @@ node_modules
 src/bundle
 *.iml
 .DS_Store
+comments.json
