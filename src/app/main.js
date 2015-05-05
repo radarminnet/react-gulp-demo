@@ -1,7 +1,7 @@
 var React = require("react");
-var CountBox = require("./count.jsx");
+var CommentBox = require("./app.jsx");
 
 React.render(
-    <CountBox/>,
+    <CommentBox url="comments.json" pollInterval={2000}/>,
     document.getElementById('main')
 );
